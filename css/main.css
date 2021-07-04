@@ -1,0 +1,219 @@
+/* general rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+}
+html {
+  font-size: 16px;
+}
+/* adding the container */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  /* we will add the width with the media */
+  margin-left: auto;
+  margin-right: auto;
+}
+/* small screens */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* medium screens */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* large screens */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* adding variables */
+:root{
+  --main-font-size: 1.875rem;
+  --second-font-size: 1.0625rem;
+  --border-radius: 20px;
+}
+/* end general rules */
+.grid-cards{
+  margin-top: 60px;
+}
+.grid-cards .container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: 
+  "special special cc"
+  "wd dev br";
+  gap: 20px 20px;
+}
+@media (max-width: 767px) {
+  .grid-cards .container{
+    display: flex;
+    flex-direction: column;
+  }
+}
+/* start of the special card design */
+.grid-cards .container .card-comp-special{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #99ceff;
+  padding: 30px;
+  border-radius: var(--border-rad, 20px);
+  position: relative;
+  overflow-y: hidden;
+  grid-area: special;
+}
+.grid-cards .container .card-comp-special .first-col{
+  flex: 3;
+}
+.grid-cards .container .card-comp-special .second-col{
+  flex: 2;
+}
+@media (max-width: 991px) {
+  .grid-cards .container .card-comp-special{
+    flex-direction: column;
+  }
+}
+.grid-cards .container .card-comp-special h2{
+  font-size: var(--main-font-size, 1.875rem);
+  color: #0084ff;
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+}
+.grid-cards .container .card-comp-special .card-comp-txt{
+  font-size: var(--second-font-size, 1.0625rem);
+  color: #3279bb;
+}
+.grid-cards .container .card-comp-special button{
+  font-size: 1.125rem;
+  letter-spacing: 3px;
+  padding: 12px 52px;
+  background-color: #0084ff;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 20px;
+  transition-duration: 0.3s;
+}
+.grid-cards .container .card-comp-special button:hover{
+  color: #0084ff;
+  background-color: white;
+}
+.grid-cards .container .card-comp-special .second-col {
+  width: 300px;
+}
+.grid-cards .container .card-comp-special .second-col img{
+  width: 250px;
+  bottom: 0;
+  position: absolute;
+}
+@media (max-width: 991px) {
+  .grid-cards .container .card-comp-special .second-col{
+    margin-top: 300px;
+    align-self: center;
+  }
+}
+@media (max-width: 767px) {
+  .grid-cards .container .card-comp-special {
+    text-align: center;
+  }
+  .grid-cards .container .card-comp-special .second-col{
+    display: none;
+  }
+}
+/* End of the special card design */
+/* start of the global component card design */
+.grid-cards .container .card-comp{
+  text-align: center;
+  padding: 30px; 
+  border-radius: var(--border-radius, 20px);
+}
+.grid-cards .container .card-comp .icon-card-comp{
+  font-size: 80px;
+}
+.grid-cards .container .card-comp h2{
+  font-size: var(--main-font-size, 1.875rem);
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+}
+.grid-cards .container .card-comp .card-comp-txt{
+  font-size: var(--second-font-size, 1.0625rem);
+}
+/* End of the global content design */
+/* Start of the CC card */
+.grid-cards .container .card-comp.cc{
+  background-color: #b3e9cb;
+  grid-area: cc;
+}
+.grid-cards .container .card-comp.cc h2,
+.grid-cards .container .card-comp.cc i
+{
+  color: #54c788;
+}
+.grid-cards .container .card-comp.cc .card-comp-txt{
+  color: #529671;
+}
+/* End of the CC card */
+/* Start of the wd card */
+.grid-cards .container .card-comp.wd{
+  background-color: #ffbfbf;
+  grid-area: wd;
+}
+.grid-cards .container .card-comp.wd h2,
+.grid-cards .container .card-comp.wd i{
+  color: #ff8a8a;
+}
+.grid-cards .container .card-comp.cc .card-comp-txt{
+  color: #9e5d5d;
+}
+/* End of the wd card */
+/* Start of the dev card */
+.grid-cards .container .card-comp.dev{
+  background-color: #ffddab;
+  grid-area: dev;
+}
+.grid-cards .container .card-comp.dev h2{
+  color: rgb(255, 193, 102);
+}
+.grid-cards .container .card-comp.dev .icon-card-comp{
+  color: #f5e1e1;
+  background-color: rgb(255, 193, 102);
+  width: fit-content;
+  font-size: 50px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: auto;
+}
+.grid-cards .container .card-comp.dev .card-comp-txt{
+  color: #a68454;
+}
+/* End of the wd card */
+/* Start of the br card */
+.grid-cards .container .card-comp.br{
+  background-color: #c3c1f1;
+  grid-area: br;
+}
+.grid-cards .container .card-comp.br h2,
+.grid-cards .container .card-comp.br i{
+  color: #9693e6;
+}
+.grid-cards .container .card-comp.br .card-comp-txt{
+  color: #676597;
+}
+/* End of the br card */
