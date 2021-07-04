@@ -5,7 +5,7 @@ Certainly, there will be a lot of edits and updates from that design:
   1.  creating different ideas for CSS display.
   2.  Manipulating and animation with JS.
   3.  changing in media queries.<br>
-<br>
+
 when finishing any of these updates these will be committed in a new branch. I will make sure not to delete any branch of these branches.<br>
 
 That UI design was created by "nicePage", which allows the client to use the UI design not to sell it.<br>
