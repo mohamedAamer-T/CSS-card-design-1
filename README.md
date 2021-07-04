@@ -1,5 +1,4 @@
 # CSS-card-design-1
-HTML &amp; CSS for designing Cards
 
 Creating the first design of the cards decoration blocks.<br>
 Certainly, there will be a lot of edits and updates from that design:
